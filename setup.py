@@ -10,13 +10,6 @@ try:
 except ImportError:
     from distutils.core import setup
 
-
-with open('README.rst') as readme_file:
-    readme = readme_file.read()
-
-with open('HISTORY.rst') as history_file:
-    history = history_file.read().replace('.. :changelog:', '')
-
 packages = set(open("requirements.txt", "r").read().splitlines())
 
 requirements = list(filter(lambda x: "http" not in x, packages))
@@ -29,7 +22,6 @@ setup(
     name='polyglot',
     version='16.07.04',
     description='Polyglot is a natural language pipeline that supports massive multilingual applications.',
-    long_description=readme + '\n\n' + history,
     author='Rami Al-Rfou',
     author_email='rmyeid@gmail.com',
     url='https://github.com/aboSamoor/polyglot',
